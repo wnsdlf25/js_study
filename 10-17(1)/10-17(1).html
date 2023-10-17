@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hello">안녕하세요</h1>
+
+    <script>
+      // 문서의 html 요소를 가져와라 id가 hello인 것을.
+      // 그것의 내부 html 내용을 안녕으로 변경
+      // document.getElementById("??").innerHTML = "??";
+      // getElementById == selector
+      document.getElementById("hello").innerHTML = "안녕";
+      // 색을 red로 변경하라
+      document.getElementById("hello").style.color = "red";
+      // fontsize 를 16px 로 설정하라
+      document.getElementById("hello").style.fontSize = "16px";
+    </script>
+  </body>
+</html>
