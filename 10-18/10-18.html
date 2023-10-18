@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main(3).css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="정보">알림창</p>
+      <!-- 파라미터를 이용해서 함수 가독성 높이고 쓸 때 없이 많이 사용안할 수 있음 -->
+      <button onclick="알림창열기('none');">닫기</button>
+    </div>
+    <button onclick="알림창열기('block');">버튼1</button>
+    <button onclick="알림창열기2('block');">버튼2</button>
+
+    <script>
+      function 알림창열기(구멍, 정보) {
+        document.getElementById("alert").style.display = 구멍;
+        document.getElementById("정보").innerHTML = "아이디입력하세요";
+      }
+      function 알림창열기2(구멍, 정보) {
+        document.getElementById("alert").style.display = 구멍;
+        document.getElementById("정보").innerHTML = "비번입력하세요";
+      }
+    </script>
+  </body>
+</html>

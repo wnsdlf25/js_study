@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main(4).css" />
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="title">알림창</p>
+      <!-- 파라미터를 이용해서 함수 가독성 높이고 쓸 때 없이 많이 사용안할 수 있음 -->
+      <button id="close">닫기</button>
+    </div>
+
+    <button onclick="아이디알림창()">버튼1</button>
+    <button onclick="비번알림창()">버튼2</button>
+
+    <script>
+      // addEventListener - 이벤트가 발생할 경우 해당 코드를 실행하라
+      // 여기서 function는 콜백함수로 즉시 실행 함수라고도 한다
+      document.getElementById("close").addEventListener("click", function() {
+        document.getElementById("alert").style.display = "none";
+      });
+
+      //   function 알림창열기(구멍) {
+      //     document.getElementById("alert").style.display = 구멍;
+      //   }
+
+      // getElementsByClassName을 이용해서 class 를 셀렉터로 사용가능
+      // [0] 처럼 인덱스를 이용하여 몇번 째 class 를 셀렉터로 지정할건지 정함
+      function 아이디알림창() {
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("title").innerHTML = "아이디입력하세요";
+      }
+
+      function 비번알림창() {
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("title").innerHTML = "비번입력하세요";
+      }
+    </script>
+  </body>
+</html>
