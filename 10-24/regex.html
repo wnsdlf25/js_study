@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="regex.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <ul class="ads">
+      <li class="ads-item">A third item</li>
+      <li class="ads-item">A fourth item</li>
+      <li class="ads-item">And a fifth one</li>
+      <li class="ads-item">A second item</li>
+      <li class="ads-item">An item</li>
+    </ul>
+
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="pw" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="send">전송</button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- /a/.test('abcde') 해당 단어 유무 확인-->
+    <!-- /[a-z]/.test('abcde') 범위 정하기-->
+    <!-- /[A-Z]/.test('abcde') 대문자 확인 -->
+    <!-- /[0-9]/.test('abcde') 숫자 확인 -->
+
+    <script>
+      $("form").on("submit", function(e) {
+        if (document.getElementById("email").value == "") {
+          e.preventDefault();
+          alert("아이디 입력하쇼");
+        } else if (document.getElementById("pw").value == "") {
+          e.preventDefault();
+          alert("비밀번호 입력하쇼");
+        } else if (document.getElementById("pw").value.length < 6) {
+          alert("입력한 글자가 6글자 이상이어야 합니다.");
+          return false;
+        }
+      });
+    </script>
+
+    <button id="login">로그인</button>
+
+    <script>
+      $("#login").on("click", function() {
+        $(".black-bg").addClass("show-modal");
+      });
+    </script>
+    <script>
+      $("#close").on("click", function() {
+        $(".black-bg").removeClass("show-modal");
+      });
+    </script>
+
+    <script>
+      $("form").on("submit", function(e) {
+        var 입력한값 = document.getElementById("email").value;
+        if (/\S+@\S+\.\S+/.test(입력한값 == false)) {
+          alert("이메일형식아님");
+          e.preventDefault();
+        }
+      });
+      $("form").on("submit", function(e) {
+        var 비번 = document.getElementById("pw").value;
+        if (/[A-Z]/.test(비번) == false) {
+          alert("대문자없는데요");
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script>
+      document
+        .getElementsByClassName("navbar-toggler")[0]
+        .addEventListener("click", function() {
+          document.getElementsByClassName("ads")[0].classList.toggle("show");
+        });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
